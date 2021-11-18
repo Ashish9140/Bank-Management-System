@@ -1,0 +1,41 @@
+.kyc-manager{
+    padding: 1rem;
+    background-color: #fff;
+    margin: 1rem 0rem 1rem 0rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    min-width: 950px;
+}
+
+.kyc-scrolled{
+    overflow-x: auto;
+}
+
+.kyc-manager>h2{
+    font-family: 'Arapey', serif;
+    margin-bottom: 5px;
+}
+
+.kyc-manager-btn{
+    border-radius: 10px;
+    height: 35px;
+    margin: 0px 0px 10px 0px;
+    background-color: green;
+    color: #fff;
+    border: 1px solid black;
+}
+
+.kyc-manager-btn:hover{
+    background-color: rgb(118, 168, 68);
+}
+
+.kyc-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kyc-img>img{
+    width: 400px;
+    height: 200px;
+}
