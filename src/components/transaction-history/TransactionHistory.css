@@ -1,0 +1,49 @@
+.transaction-history{
+    padding: 1rem;
+    background-color: #fff;
+    margin: 1rem 0rem 1rem 0rem;
+    border-radius: 10px;
+    min-width: 800px;
+}
+
+.transaction-scrolled{
+    overflow-x: auto;
+}
+
+.transaction-history>h2{
+    font-family: 'Arapey', serif;
+    margin-bottom: 15px;
+}
+
+.transaction-history-btn{
+    border-radius: 10px;
+    height: 35px;
+    margin: 0px 0px 10px 0px;
+    background-color: green;
+    color: #fff;
+    border: 1px solid black;
+}
+
+.transaction-history-btn:hover{
+    background-color: rgb(118, 168, 68);
+}
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td,
+  #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #747977;
+    color: white;
+  }

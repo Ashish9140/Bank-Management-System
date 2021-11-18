@@ -1,0 +1,49 @@
+.loan-margin-auto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loan-calc{
+    padding: 1rem;
+    background-color: #fff;
+    margin: 1rem 0rem 1rem 0rem;
+    border-radius: 10px;
+    width: 340px;
+}
+
+.loan-group{
+    margin: 6px 0px 3px 0px;
+}
+
+.loan-group label{
+    margin-bottom: 5px;
+}
+
+.loan-group input{
+    width: 305px;
+    background: #f1f5f9;
+    height: 30px;
+    padding: 5px 5px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+}
+
+.loan-calc-btn{
+    position: relative;
+    left: 202px;
+    margin-top: 10px;
+}
+
+.loan-calc-btn button {
+    padding: 6px;
+    background-color: #DD2F6E;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid #DD2F6E;
+    color: white;
+    cursor: pointer;
+    margin-top: 6px;
+    margin-bottom: 3px;
+}

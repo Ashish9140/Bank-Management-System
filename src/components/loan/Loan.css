@@ -1,0 +1,23 @@
+.loan {
+    padding: 1rem;
+    background-color: #fff;
+    margin: 1rem 0rem 1rem 0rem;
+    border-radius: 10px;
+} 
+
+.input-group textarea{
+    min-height: 100px;
+    resize: none;
+}
+
+.loan-btn button {
+    padding: 6px;
+    margin: 5px;
+    margin-left: 15px;
+    background-color: #DD2F6E;
+    width: 120px;
+    border-radius: 5px;
+    border: 1px solid #DD2F6E;
+    color: white;
+    cursor: pointer;
+}

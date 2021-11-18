@@ -1,0 +1,40 @@
+.headerdrop{
+    display: none;
+}
+
+.showheader{
+    background: #fff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    padding: 5px;
+    position: fixed;
+    top: 58px;
+    right: 3px;
+    z-index: 99999;
+    border-radius: 5px;
+}
+
+.showheader h3{
+    text-align: center;
+    margin: 10px;
+}
+
+.showheader ul li{
+    width: 100%;
+    margin-bottom: 0.3rem;
+    padding-left: 0.5rem;
+}
+
+.showheader ul li a{
+    padding-top: 0.5rem ;
+    padding-bottom: 0.5rem;
+    padding-right: 10px;
+    display: block;
+    color: black;
+    font-size: 1.1rem;
+    padding-left: 10px;
+}
+
+.showheader ul li a:hover{
+    background-color: aliceblue;
+    border-radius: 30px 0px 0px 30px;
+}

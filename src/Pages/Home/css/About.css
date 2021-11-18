@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about{
+    margin: 5px 160px 5px 160px;
+    font-family: 'Shippori Antique B1', sans-serif;
+    line-height: 1.5;
+    background-color: rgb(241, 196, 16);
+}
+
+.sec1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.sec1 h2{
+    color: blue;
+}
+
+.sec2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.sec2-div{
+    text-align: left;
+}
+
+.sec2 h3{
+    margin: 5px;
+}
+
+.sec2 img{
+    width: 540px;
+    height: 360px;
+    border-radius: 10px;
+}
+
+.sec3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 80px;
+}
+
+.sec3 div{
+    margin: 10px;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sec3-title{
+    margin: 15px;
+}
+
+.sec3 img{
+    width: 88px;
+    height: 88px;
+    margin: auto;
+}
+
+.sec4{
+    margin-top: 80px;
+}
+
+.sec4-top{
+    text-align: center;
+    margin: 10px;
+}
+
+.sec4-team-member{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.team-member{
+    margin-left: 10px;
+}
+
+.team-member img{
+    border-radius: 5px;
+    width: 97%;
+}
+
+.sec5{
+    margin-top: 80px;
+}
+
+.sec5 h2{
+    color: blue;
+    font-size: 30px;
+}
+
+.sec5-top{
+    text-align: center;
+    margin: 10px;
+}
+
+.sec5-service{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.sec5 img{
+    width: 88px;
+    height: 88px;
+    margin: auto;
+}
+
+.unit-4{
+    background-color: rgb(207, 193, 193);
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.unit-4 div{
+    text-align: center;
+    margin: 10px;
+}
+
+.unit-4:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+@media only screen and (max-width:1200px) {
+    .sec2{
+        grid-template-columns: 1fr;
+    }
+    .sec3{
+        grid-template-columns: 1fr;
+    }
+    .sec5-service{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    .sec4-team-member{
+        grid-template-columns: 1fr;
+    }
+    .sec2 img{
+        width: 400px;
+    }
+
+    .team-member{
+        margin-top: 5px;
+    }
+
+    .sec5-service{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media only screen and (max-width:750px) {
+   .about{
+    margin: 5px 60px 5px 60px;
+   }
+}
+
+@media only screen and (max-width:500px) {
+   .about{
+    margin: 5px 10px 5px 10px;
+   }
+   .sec2 img{
+       width: 300px;
+       height: 200px;
+   }
+}

@@ -1,0 +1,18 @@
+.loan-history {
+  padding: 1rem;
+  background-color: #fff;
+  margin: 1rem 0rem 1rem 0rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  min-width: 720px;
+  font-size: 15px;
+}
+
+.loan-history > h2 {
+  font-family: "Arapey", serif;
+  margin-bottom: 5px;
+}
+
+.loan-history-scrolled {
+  overflow-x: auto;
+}

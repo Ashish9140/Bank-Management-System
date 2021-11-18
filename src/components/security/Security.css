@@ -1,0 +1,50 @@
+.security {
+    padding: 1rem;
+    background-color: #fff;
+    margin: 1rem 0rem 1rem 0rem;
+    border-radius: 10px;
+}
+
+.security>h2 {
+    font-family: 'Arapey', serif;
+    margin-bottom: 5px;
+}
+
+.security .form-group {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    margin: 1rem;
+}
+
+.security .form-group label {
+    font-size: 20px;
+    margin: 5px 0px 5px 0px;
+}
+
+.security .form-group>div>input {
+    width: 90%;
+    background: #f1f5f9;
+    padding: 1rem;
+    height: 8px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.security .security-btn button{
+    padding: 6px;
+    margin: 5px;
+    margin-left: 15px;
+    background-color: #DD2F6E;
+    width: 80px;
+    border-radius: 5px;
+    border: 1px solid #DD2F6E;
+    color: white;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:600px) {
+   .security .form-group {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,102 @@
+.user-info{
+    padding: 1rem;
+    background-color: #fff;
+    margin: 1rem 0rem 1rem 0rem;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.basic-info div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.details div{
+    margin: 10px;
+    margin-top: 20px;
+}
+
+.basic-info div img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.user-profile {
+    padding: 1rem;
+    background-color: #fff;
+    margin: 1rem 0rem 1rem 0rem;
+    border-radius: 10px;
+}
+
+.input-group{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.input-profile{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 10px 0px 2px 0px;
+}
+
+.input-profile label{
+    margin-bottom: 5px;
+}
+
+.input-group div{
+    margin: 10px 0px 2px 0px;
+}
+
+.input-group label{
+    margin-bottom: 5px;
+}
+
+.input-group input,.input-group select,.input-profile input,.input-group textarea{
+    width: 95%;
+    background: #f1f5f9;
+    height: 30px;
+    padding: 5px 5px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+}
+
+.input-profile input{
+    width: 97.2%;
+}
+
+.user-profile .user-profile-btn button {
+    padding: 6px;
+    margin: 5px;
+    margin-left: 15px;
+    background-color: #DD2F6E;
+    width: 80px;
+    border-radius: 5px;
+    border: 1px solid #DD2F6E;
+    color: white;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:900px) {
+    .input-group{
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .user-info{
+        grid-template-columns: 1fr;
+    }
+    .details div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

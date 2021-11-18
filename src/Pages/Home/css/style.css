@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,500;1,600;1,700&family=Racing+Sans+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+#home {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  color: black;
+  font-family: 'Montserrat', serif;
+  font-size: 16px;
+  line-height: 102%;
+  letter-spacing: 1px;
+  font-weight: 300;
+  scrollbar-width: thin;
+}
+#home *{
+  line-height: 135%;
+  letter-spacing: 1px;
+}
+@media screen and (max-width: 850px) {
+  #home{
+    font-size: 14px;
+  }
+}
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+a{
+  text-decoration: none;
+}
+nav {
+  height: 6rem;
+  min-width: 100%;
+  background-color: transparent;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 0 15px;
+  position: fixed;
+  z-index: 99;
+  transition: all linear 0.3s ;
+}
+nav.bg-blue{
+  z-index: 100;
+  background-color: #384171;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/*Styling Links*/
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 75%;
+  padding: 0 0.7vw;
+  justify-content: flex-end;
+  align-items: center;
+  text-transform: uppercase;
+}
+.nav-links li {
+  margin: 0 0.7vw;
+}
+.nav-links li a {
+  color: whitesmoke; /* ##################################### CHANGE */
+  text-decoration: none;
+  font-family: "Racing Sans One", cursive;
+  font-size: 1.1em;
+}
+.nav-links li>a:hover {
+  color: #61b0fb;  /* ##################################### CHANGE */
+}
+.nav-links li {
+  position: relative;
+}
+
+/*Styling Buttons*/
+button {
+  cursor: pointer;
+  border-radius: 2em;
+  box-sizing: border-box;
+  padding: 0.6rem 0.8rem;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+button span {
+  color: #ffffff;
+  font-family: "Pacifico", cursive;
+ /*  font-family: "Racing Sans One", cursive; */
+ /* font-family: 'Montserrat', serif; */ /* ##################################### CHANGE */
+ font-weight: 500;
+ /* font-style: italic; */
+  font-size: 1.3em;
+  background-color: transparent;
+  padding: 16px 18px;
+  border-radius: 2em;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+.login-button span {
+  background: transparent; /* ##################################### CHANGE */
+  color: white;
+}
+.login-button {
+  position: relative;
+  background-color: transparent;
+  border: 2px solid #ffc8b2;
+  margin: 0 2vw 0 0vw;
+  transform: scale(1);
+}
+.login-button:hover,.join-button:hover  {
+  transform: scale(1.07);
+}
+.login-button:hover span {
+  color: white;
+}
+.join-button {
+  background: linear-gradient(270deg, #ffba95 0%, #ff61ca 100%);
+  border: 2px solid #ffc8b2;
+  box-shadow: none;
+  transform: scale(1);
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background: #f2f5f7; /* #f2f5f7 ##################################### CHANGE */
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+.hamburger {
+  display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 850px) {
+  nav {
+    position: fixed;
+    z-index: 3;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+  }
+  .nav-links {
+    top: 0;
+    left: 0;
+    background: white;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    clip-path: circle(50px at 90% -20%);
+    -webkit-clip-path: circle(50px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
+  .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+  .nav-links li:nth-child(4) {
+    transition: all 0.5s ease 0.9s;
+    margin: 0;
+  }
+  .nav-links li:nth-child(5) {
+    transition: all 0.5s ease 1s;
+    margin: 0;
+  }
+  li.fade {
+    opacity: 1;
+  }
+  li.fade a{
+    color:#323a65
+  }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+  background-color: #323a65;
+}
+.toggle .line2 {
+  transition: all 0.7s ease;
+  width: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+  background-color: #323a65
+}
+
+/* HEADER */
+header {
+  height: 100vh;
+  background-image: url(assets/Home\ Page/Header/Group\ 24.svg);
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.header{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    z-index: 1;
+}
+.main__heading{
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5em;
+    color: white;
+    
+}
+.color__wheat{
+  color:wheat;
+}
+.sub__heading{
+    margin: 12% 0;
+    font-size: 1.8em;
+    line-height: 115%;
+    font-weight: 500;
+    font-style: oblique;
+    width: 300px;
+}
+
+.liq{
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width: 200px;
+    height: 30%;
+    background: url(assets/Home\ Page/Header/liq-6.svg);
+    z-index: 0;
+}
+
+@media screen and (max-width: 1024px){
+    header{
+        background-image: url(assets/Home\ Page/Header/small-screen.svg);
+    }
+}
+

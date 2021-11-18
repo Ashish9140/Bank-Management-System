@@ -1,0 +1,66 @@
+.user-card {
+    padding: 1rem;
+    background-color: #fff;
+    margin: 1rem 0rem 1rem 0rem;
+    border-radius: 10px;
+}
+
+.user-card>h2 {
+    font-family: 'Arapey', serif;
+    margin-bottom: 5px;
+}
+
+.user-card .form-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1rem;
+}
+
+.user-card .form-group select {
+    width: 50%;
+    border-radius: 10px;
+    height: 30px;
+    background: #f1f5f9;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+}
+
+.user-card .form-group label {
+    font-size: 20px;
+    margin: 5px 0px 5px 0px;
+}
+
+.user-card .user-card-btn button {
+    padding: 6px;
+    margin: 5px;
+    margin-left: 15px;
+    background-color: #DD2F6E;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid #DD2F6E;
+    color: white;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:600px) {
+    .user-card .form-group select {
+        width: 90%;
+    }
+}
+
+.card-details .form-group{
+    font-size: 25px;
+    line-height: 1.5;
+    color: #604848;
+    background-color: rgb(246, 244, 248);
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+}
+
+.card-details .form-group .fm-gp{
+    color: #06e806;
+    margin-left: 15px;
+}

@@ -1,0 +1,68 @@
+.kyc {
+    padding: 1rem;
+    background-color: #fff;
+    margin: 1rem 0rem 1rem 0rem;
+    border-radius: 10px;
+}
+
+.kyc>h2 {
+    font-family: 'Arapey', serif;
+    margin-bottom: 5px;
+}
+
+.form-components button {
+    background-color: #DD2F6E;
+    border: 2px solid #DD2F6E;
+}
+
+.form-components {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-components select {
+    margin-top: 2rem;
+    width: 250px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    height: 30px;
+    background: #f1f5f9;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+}
+
+.form-components button{
+    width: 250px;
+    border-radius: 10px;
+    height: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.form-components input {
+    margin: 2rem 0rem 2rem 0rem;
+    background: #f1f5f9;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.kyc ul {
+    margin-top: 1rem;
+    margin-left: 15px;
+}
+
+.kyc ul li {
+    margin: 10px 5px;
+    list-style:circle;
+}
+
+@media only screen and (max-width:420px){
+    .form-components select, .form-components button{
+        width: 200px;
+        border-radius: 20px;
+        height: 30px;
+    }
+}
