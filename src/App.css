@@ -1,0 +1,186 @@
+.profile-modal{
+  padding: 1rem;
+  margin: 1rem 0rem 1rem 0rem;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.profile-modal .input-group{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.profile-modal .input-profile{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 10px 0px 2px 0px;
+}
+
+.profile-modal .input-profile label{
+  margin-bottom: 5px;
+}
+
+.profile-modal .input-group div{
+  margin: 10px 0px 2px 0px;
+}
+
+.profile-modal .input-group label{
+  margin-bottom: 5px;
+}
+
+.profile-modal .input-group input,.profile-modal .input-group select,.profile-modal .input-profile input,.profile-modal .input-group textarea{
+  width: 95%;
+  background: #f1f5f9;
+  height: 30px;
+  padding: 5px 5px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+
+.profile-modal .input-profile input{
+  width: 97.2%;
+}
+
+.profile-modal .profile-modal-btn button {
+  padding: 6px;
+  margin: 5px;
+  margin-left: 15px;
+  background-color: #DD2F6E;
+  width: 80px;
+  border-radius: 5px;
+  border: 1px solid #DD2F6E;
+  color: white;
+  cursor: pointer;
+}
+
+@media only screen and (max-width:900px) {
+  .profile-modal .input-group{
+      grid-template-columns: 1fr;
+      width: 100%;
+  }
+}
+
+.close-modal{
+  color: red;
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dd-modal{
+display: none;
+}
+
+.static-group{
+display: grid;
+grid-template-columns: 1fr 1fr;
+
+}
+
+.static-group label{
+margin-left: 2px;
+}
+
+.static-group-vec{
+width: 95%;
+background: rgb(236 241 223);
+padding: 8px;
+outline: none;
+border-radius: 5px;
+border: none;
+margin-top: 5px;
+}
+
+.static-group-vec textarea{
+width: 100%;
+height: 100%;
+background: rgb(236 241 223);
+border: none;
+outline: none;
+resize: none;
+font-size: 20px;
+}
+
+.static-group>div{
+margin: 10px 0px 2px 0px;
+}
+
+@media only screen and (max-width:900px) {
+.profile-modal .static-group{
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+}
+
+.calculator{
+display: inline-block;
+background-color: #fff;
+padding: 1rem;
+margin: 1rem 0rem 1rem 0rem;
+border-radius: 10px;
+width: 310px;
+}
+
+.calculator>h2{
+font-family: 'Arapey', serif;
+margin-bottom: 5px;
+margin-left: 3px;
+}
+
+.loan-calc>h4{
+margin: 10px 2px;
+font-size: 19px;
+background-color: green;
+color: white;
+padding: 5px;
+}
+
+.loan-group{
+margin: 6px 0px 3px 0px;
+}
+
+.loan-group>div{
+margin-top: 5px;
+}
+
+.loan-group label{
+margin-bottom: 5px;
+}
+
+.loan-group input{
+width: 275px;
+background: #f1f5f9;
+height: 30px;
+padding: 5px 5px;
+outline: none;
+border-radius: 5px;
+border: none;
+}
+
+.loan-calc-btn button {
+padding: 6px;
+background-color: #DD2F6E;
+width: 150px;
+border-radius: 5px;
+border: 1px solid #DD2F6E;
+color: white;
+cursor: pointer;
+margin-top: 6px;
+margin-bottom: 3px;
+}
+
+.error{
+background-color: red;
+color: white;
+}
+
+@media only screen and (max-width:355px) {
+.calculator{
+    width: 290px;
+}
+.loan-group input{
+  width: 265px;
+}
+}
