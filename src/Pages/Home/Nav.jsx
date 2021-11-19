@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "assets/Home Page/Header/GraficSpark.png";
-// import { About } from "./About";
+import { About } from "./About";
 
 export const Nav = () => {
   const [navOpen, setnavOpen] = useState(false);
@@ -54,13 +54,13 @@ export const Nav = () => {
       </div>
       <ul className={`nav-links ${navOpen ? "open" : ""}`}>
         <li className={navOpen ? "fade" : ""}>
-          <Link href="/about">About Us</Link>
+          <Link to="/about">About Us</Link>
         </li>
         <li className={navOpen ? "fade" : ""}>
           <Link to="/">Home</Link>
         </li>
         <li className={navOpen ? "fade" : ""}>
-          <Link href="policy">Terms of Services</Link>
+          <Link to="/contact">Contact Us</Link>
         </li>
         <li className={navOpen ? "fade" : ""}>
           <button className="login-button">

@@ -17,7 +17,7 @@ class Home extends React.Component {
   renderPage = () => {
     return (
       <>
-        {!this.state.load ? <Spinner close={() => setTimeout(() => this.setState({load: true}), 4000) }/> : null}
+        {!this.state.load ? <Spinner close={() => setTimeout(() => this.setState({load: true}), 3000) }/> : null}
         <div className="home" id="home">
           <Nav />
           <HomeHeader />
