@@ -3,8 +3,8 @@ import React from "react";
 
 // Components
 import Header from "components/header/Header";
-import { Footer } from "components/footer/Footer";
-import { AdminDashboard } from "admin-components/admin-dashboard/AdminDashboard";
+import Footer from "components/footer/Footer";
+import AdminDashboard from "admin-components/admin-dashboard/AdminDashboard";
 import SiteSetting from "admin-components/site-setting/SiteSetting";
 import UserList from "admin-components/user-list/UserList";
 import CardManagement from "admin-components/card-management/CardManagement";
@@ -13,7 +13,7 @@ import KycManagement from "admin-components/kyc-management/KycManagement";
 
 import Security from "components/security/Security";
 import Userprofile from "components/user-profile/Userprofile";
-import TransferHistory from "admin-components/transfer-history/TransferHistory";
+import TransferTable from "admin-components/transfer-history/TransferTable";
 
 class AdminMain extends React.Component {
   render() {
@@ -30,7 +30,7 @@ class AdminMain extends React.Component {
           <Route exact path="/admin/card-manager" component={CardManagement} />
           <Route exact path="/admin/loan-manager" component={LoanManagement} />
           <Route exact path="/admin/kyc-manager" component={KycManagement} />
-          <Route exact path="/admin/transfer-history" component={TransferHistory} />
+          <Route exact path="/admin/transfer-history" component={TransferTable} />
         </Switch>
       </div>
       <Footer />

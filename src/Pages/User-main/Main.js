@@ -7,7 +7,7 @@ import Header from "components/header/Header";
 import Kyc from "components/kyc/Kyc";
 import Security from "components/security/Security";
 import Transfer from "components/transfer/Transfer";
-import { Footer } from "components/footer/Footer";
+import Footer from "components/footer/Footer";
 import TransactionHistory from "components/transaction-history/TransactionHistory";
 import Userprofile from "components/user-profile/Userprofile";
 import Usercard from "components/user-card/Usercard";

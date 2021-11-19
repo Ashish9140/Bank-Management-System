@@ -1,10 +1,16 @@
+import { connect } from 'react-redux'
 import './Footer.css'
 
-export const Footer = () => {
+const Footer = ({siteInfo}) => {
     return (
         <div className="user-home-footer">
-            <p>@sumexbank 2021</p>
+            <p>@{siteInfo.bankName||"sumex"}bank 2021</p>
             <p>all rights reserved</p>
         </div>
     )
 }
+const mapStateToProps = (state) => {
+    return {...state}
+}
+  
+export default connect(mapStateToProps)(Footer);

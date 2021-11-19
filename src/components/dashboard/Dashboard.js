@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { Chart } from '../charts/Chart'
+import Chart from '../charts/Chart'
 import './Dashboard.css'
 
 class Dashboard extends React.Component {

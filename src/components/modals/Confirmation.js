@@ -5,7 +5,7 @@ class Confirmation extends React.Component {
   handleDeleteUser = async () => {
     await axios({
       method: "delete",
-      url: `http://localhost:3001/admin/delete/${this.props.id}`,
+      url: `https://sumex-bank-backend.herokuapp.com/admin/delete/${this.props.id}`,
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

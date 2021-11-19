@@ -1,19 +1,16 @@
 // import { useEffect } from "react";
+import { connect } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 
-export const Sidebar = () => {
+const Sidebar = (props) => {
     let location = useLocation().pathname;
 
-    // useEffect(() => {
-    //     let sidebar = document.querySelector(".sidebar");
-    // })
-    console.log("user sidebar")
     return (
         <>
             <input type="checkbox" id="nav-toggle" />
             <div className="sidebar">
                 <div className="sidebar-brand">
-                    <h1><span className="lab la-accusoft"></span> <span>Sumex</span></h1>
+                    <h1><span className="lab la-accusoft"></span> <span>{props.siteInfo.bankName ||"Sumex"}</span></h1>
                 </div>
                 <div className="sidebar-menu">
                     <ul>
@@ -54,3 +51,8 @@ export const Sidebar = () => {
         </>
     )
 }
+const mapStateToProps = (state) => {
+    return {...state}
+}
+  
+export default connect(mapStateToProps)(Sidebar);

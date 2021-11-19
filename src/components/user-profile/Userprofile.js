@@ -89,7 +89,7 @@ class Userprofile extends React.Component {
                 src={
                   user
                     ? user.profilePic
-                      ? `http://localhost:3001/user/pfp/${user._id}`
+                      ? `https://sumex-bank-backend.herokuapp.com/user/pfp/${user._id}`
                       : avatar
                     : avatar
                 }

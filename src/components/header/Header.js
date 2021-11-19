@@ -19,15 +19,15 @@ class Header extends React.Component {
   handleLogout = async () => {
     await axios({
       method: "delete",
-      url: "http://localhost:3001/user",
+      url: "https://sumex-bank-backend.herokuapp.com/user",
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
     localStorage.removeItem("token");
     window.location.reload(false);
   };
-    render() {
-      const { user } = this.props.userInfo;
-      const location = this.props.location.pathname.split("/")[1];
+  render() {
+    const { user } = this.props.userInfo;
+    const location = this.props.location.pathname.split("/")[1];
     return (
       <>
         <div className="user-header">
@@ -42,7 +42,7 @@ class Header extends React.Component {
               src={
                 user
                   ? user.profilePic
-                    ? `http://localhost:3001/user/pfp/${user._id}`
+                    ? `https://sumex-bank-backend.herokuapp.com/user/pfp/${user._id}`
                     : avatar
                   : avatar
               }

@@ -1,5 +1,5 @@
 .spinner-wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -8,9 +8,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 1000;
+  animation: fade-in 3s;
 }
-
+@keyframes fad-in{
+    0%{
+        opacity: 1;
+    } 100%{
+        opacity: 0;
+    }
+}
 .spinner-container {
     position: relative;
     width: 100%;

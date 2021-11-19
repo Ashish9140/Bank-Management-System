@@ -1,5 +1,5 @@
 import AdminMain from "Pages/Admin-main/AdminMain";
-import { AdminSidebar } from "admin-components/admin-sidebar/Sidebar";
+import AdminSidebar from "admin-components/admin-sidebar/Sidebar";
 import { getUser } from "actions";
 import "./style-admin.css";
 
