@@ -10,7 +10,7 @@ class KycManagement extends React.Component {
   getApplications = async () => {
     const userList = await axios({
       method: "get",
-      url: "http://localhost:3001/admin/users",
+      url: "https://sumex-bank-backend.herokuapp.com/admin/users",
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
     const applications = userList.data.filter(
@@ -30,7 +30,7 @@ class KycManagement extends React.Component {
       };
       await axios({
         method: "patch",
-        url: `http://localhost:3001/admin/edit/${user.userId._id}`,
+        url: `https://sumex-bank-backend.herokuapp.com/admin/edit/${user.userId._id}`,
         data: {
           ...changes,
         },
@@ -47,7 +47,7 @@ class KycManagement extends React.Component {
         <td>
           <div className="kyc-img">
             <img
-              src={`http://localhost:3001/user/idCard/${user.userId._id}`}
+              src={`https://sumex-bank-backend.herokuapp.com/user/idCard/${user.userId._id}`}
               alt="loading"
             />
           </div>

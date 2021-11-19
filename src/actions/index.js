@@ -4,7 +4,7 @@ export const createUser = (userData, history) => async (dispatch) => {
   try {
     const userInfo = await axios({
       method: "post",
-      url: "http://localhost:3001/signup",
+      url: "https://sumex-bank-backend.herokuapp.com/signup",
       data: userData,
     });
     if (userInfo.data.error) {
@@ -19,7 +19,7 @@ export const logInUser = (userData, history) => async (dispatch) => {
   try {
     const user = await axios({
       method: "post",
-      url: "http://localhost:3001/login",
+      url: "https://sumex-bank-backend.herokuapp.com/login",
       data: userData,
     });
     if (user.data.error) {
@@ -36,7 +36,7 @@ export const getUser = (token, history) => async (dispatch) => {
   try {
     const user = await axios({
       method: "get",
-      url: "http://localhost:3001/user",
+      url: "https://sumex-bank-backend.herokuapp.com/user",
       headers: { Authorization: `Bearer ${token}` },
     });
     dispatch({ type: "GET_USER", payload: user.data });
@@ -49,7 +49,7 @@ export const transactionUpdate = (transactionData) => async (dispatch) => {
   try {
     const user = await axios({
       method: "patch",
-      url: "http://localhost:3001/user",
+      url: "https://sumex-bank-backend.herokuapp.com/user",
       data: {
         transactionHistory: [transactionData],
         accountBal: transactionData.finalBal,
@@ -66,7 +66,7 @@ export const updateUserProfile = (updatedInfo) => async (dispatch) => {
   try {
     const user = await axios({
       method: "patch",
-      url: "http://localhost:3001/user",
+      url: "https://sumex-bank-backend.herokuapp.com/user",
       data: { ...updatedInfo },
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
@@ -82,7 +82,7 @@ export const updatePfp = (pfp) => async (dispatch) => {
     form.append("pfp", pfp);
     const user = await axios({
       method: "post",
-      url: "http://localhost:3001/user/pfp",
+      url: "https://sumex-bank-backend.herokuapp.com/user/pfp",
       data: form,
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -102,7 +102,7 @@ export const cardApply = (cardInfo) => async (dispatch) => {
   try {
     const user = await axios({
       method: "patch",
-      url: "http://localhost:3001/user",
+      url: "https://sumex-bank-backend.herokuapp.com/user",
       data: { cardInfo },
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
@@ -118,7 +118,7 @@ export const updateKyc = (kyc) => async (dispatch) => {
     form.append("idCard", kyc);
     const user = await axios({
       method: "post",
-      url: "http://localhost:3001/user/idCard",
+      url: "https://sumex-bank-backend.herokuapp.com/user/idCard",
       data: form,
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -140,15 +140,39 @@ export const changePassword =
     try {
       const user = await axios({
         method: "patch",
-        url: "http://localhost:3001/password",
+        url: "https://sumex-bank-backend.herokuapp.com/password",
         data: { password: { oldPassword, newPassword } },
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       if (user.data.error) {
         dispatch({ type: "HANDLE_ERROR", payload: user.data.error });
       }
-      dispatch({type: "CHANGE_PASSWORD", payload: user.data})
+      dispatch({ type: "CHANGE_PASSWORD", payload: user.data });
     } catch (e) {
       console.log(e);
     }
   };
+
+export const getSiteInfo = () => async (dispatch) => {
+  const siteInfo = await axios.get(
+    "https://sumex-bank-backend.herokuapp.com/site-info"
+  );
+  dispatch({ type: "SITE_INFO", payload: siteInfo.data });
+};
+
+export const updateSiteInfo = (data) => async (dispatch) => {
+  try {
+    const siteInfo = await axios({
+      method: "patch",
+      url: "https://sumex-bank-backend.herokuapp.com/site-info",
+      data: { ...data },
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    });
+    if (siteInfo.data.error) {
+      dispatch({ type: "HANDLE_ERROR", payload: siteInfo.data.error });
+    }
+    dispatch({ type: "UPDATE_SITE", payload: siteInfo.info });
+  } catch (e) {
+    console.log(e);
+  }
+};

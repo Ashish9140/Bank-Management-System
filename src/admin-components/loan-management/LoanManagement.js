@@ -10,7 +10,7 @@ class LoanManagement extends React.Component {
   getApplications = async () => {
     const userList = await axios({
       method: "get",
-      url: "http://localhost:3001/admin/users",
+      url: "https://sumex-bank-backend.herokuapp.com/admin/users",
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
 
@@ -21,10 +21,10 @@ class LoanManagement extends React.Component {
       loan = { ...loan, loanApproved: true };
       await axios({
         method: "patch",
-        url: `http://localhost:3001/admin/edit/${user.userId._id}`,
+        url: `https://sumex-bank-backend.herokuapp.com/admin/edit/${user.userId._id}`,
         data: {
           loanHistory: loan,
-          accountBal: user.accountBal+loan.loanAmount
+          accountBal: user.accountBal + loan.loanAmount,
         },
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -49,7 +49,10 @@ class LoanManagement extends React.Component {
               Accept Request
             </button>
             <div>
-              <button className="go-profile" onClick={() => this.setState({open: {user, loan}})}>
+              <button
+                className="go-profile"
+                onClick={() => this.setState({ open: { user, loan } })}
+              >
                 Check Loan Form<i className="las la-angle-double-right"></i>
               </button>
             </div>

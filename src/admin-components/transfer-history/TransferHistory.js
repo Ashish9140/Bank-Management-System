@@ -1,67 +1,84 @@
-import React from "react";
 import axios from "axios";
+import React from "react";
 import { connect } from "react-redux";
 import "./TransferHistory.css";
 
 class TransactionHistory extends React.Component {
-  state = { users: [] };
-  getUsers = async () => {
-    const userList = await axios({
-      method: "get",
-      url: "http://localhost:3001/admin/users",
-      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-    });
-    this.setState({ users: userList.data });
-  };
-  componentDidMount = async () => {
-    this.getUsers();
+  handleSubmit = async (e) => {
+    e.preventDefault();
+    const { transaction, user } = this.props;
+    const transactionHistory = {
+      ...transaction,
+      transactionDate: new Date(e.target[0].value + " " + e.target[1].value),
+      amount: e.target[2].value,
     };
-    renderUser = (user, transaction) => {
-        return (
-            <tr key={transaction._id}>
-              <td>{transaction.transactionDate.slice(0, 10)}</td>
-              <td>{transaction.transactionDate.slice(11, 16)}</td>
-              <td>{user._id}</td>
-              <td>{user.userId.userName}</td>
-              <td>{transaction.transactionType}</td>
-              <td>${transaction.bankType}</td>
-              <td>${transaction.amount}</td>
-              <td>${transaction.finalBal}</td>
-            </tr>
-        )
-    }
+    await axios({
+      method: "patch",
+      url: `https://sumex-bank-backend.herokuapp.com/admin/edit/${user.userId._id}`,
+      data: {
+        transactionHistory,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    this.props.close();
+    window.location.reload(false);
+  };
   render() {
-    console.log(this.state.users);
+    const { transaction, user } = this.props;
     return (
-      <div className="transaction-scrolled">
-        <div className="transaction-history">
-          <h2>Transaction History</h2>
-          <hr />
-          <table id="customers">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Account Number</th>
-                <th>User Name</th>
-                <th>Transaction Type</th>
-                <th>Transfer Type</th>
-                <th>Amount</th>
-                <th>Final Balance</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.users.map((user) =>
-                user.transactionHistory.length > 0
-                  ? user.transactionHistory.map((transaction) =>
-                      this.renderUser(user, transaction)
-                    )
-                  : null
-              )}
-            </tbody>
-          </table>
+      <>
+        <div className="transfer-card-background">
+          <div className="site-setting transfer-history-card">
+            <span id="transfer-close-btn" onClick={this.props.close}>
+              <i className="las la-times"></i>
+            </span>
+            <h2>{user.userId.userName + " " + (user.userId.lastName || "")}</h2>
+            <hr />
+            <br />
+            <form onSubmit={this.handleSubmit}>
+              <div className="input-group">
+                <div>
+                  <label>Transaction Date</label>
+                  <div>
+                    <input
+                      type="date"
+                      className="td-input"
+                      defaultValue={transaction.transactionDate.slice(0, 10)}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label>Transaction Time</label>
+                  <div>
+                    <input
+                      type="time"
+                      className="td-input"
+                      defaultValue={transaction.transactionDate.slice(11, 16)}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="input-group">
+                <div>
+                  <label>Transaction Amount</label>
+                  <div>
+                    <input
+                      type="text"
+                      className="td-input-am"
+                      defaultValue={transaction.amount}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="site-setting-btn">
+                <button type="submit">Save Changes</button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }

@@ -1,7 +1,8 @@
 // import { useEffect } from "react";
+import { connect } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 
-export const AdminSidebar = () => {
+const AdminSidebar = ({siteInfo}) => {
   let location = useLocation().pathname;
 
   return (
@@ -10,7 +11,7 @@ export const AdminSidebar = () => {
       <div className="sidebar">
         <div className="sidebar-brand">
           <h1>
-            <span className="lab la-accusoft"></span> <span>Sumex</span>
+            <span className="lab la-accusoft"></span> <span>{siteInfo.bankName || "Sumex"}</span>
           </h1>
         </div>
         <div className="sidebar-menu">
@@ -110,3 +111,7 @@ export const AdminSidebar = () => {
     </>
   );
 };
+const mapStateToProps = (state) => {
+  return {...state}
+}
+export default connect(mapStateToProps)(AdminSidebar)

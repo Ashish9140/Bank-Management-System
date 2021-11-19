@@ -10,7 +10,7 @@ class UserList extends React.Component {
   getUsers = async () => {
     const userList = await axios({
       method: "get",
-      url: "http://localhost:3001/admin/users",
+      url: "https://sumex-bank-backend.herokuapp.com/admin/users",
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
     this.setState({ users: userList.data });
@@ -28,7 +28,7 @@ class UserList extends React.Component {
       }
       await axios({
         method: "patch",
-        url: `http://localhost:3001/admin/edit/${user.userId._id}`,
+        url: `https://sumex-bank-backend.herokuapp.com/admin/edit/${user.userId._id}`,
         data: {
           accountStatus,
         },
@@ -37,6 +37,7 @@ class UserList extends React.Component {
         },
       });
       this.setState({ status: e.target.id });
+      this.getUsers();
     };
     return (
       <tr key={user.userId._id}>

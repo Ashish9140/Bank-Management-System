@@ -8,7 +8,7 @@ class CardManagement extends React.Component {
   getApplications = async () => {
     const userList = await axios({
       method: "get",
-      url: "http://localhost:3001/admin/users",
+      url: "https://sumex-bank-backend.herokuapp.com/admin/users",
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
     const applications = userList.data.filter(
@@ -31,7 +31,7 @@ class CardManagement extends React.Component {
       };
       await axios({
         method: "patch",
-        url: `http://localhost:3001/admin/edit/${user.userId._id}`,
+        url: `https://sumex-bank-backend.herokuapp.com/admin/edit/${user.userId._id}`,
         data: {
           ...changes,
         },
@@ -70,7 +70,14 @@ class CardManagement extends React.Component {
 
   renderPage = () => {
     if (this.state.open) {
-      return <CardModal user={this.state.open} close={() => { this.setState({ open: false }) }} />;
+      return (
+        <CardModal
+          user={this.state.open}
+          close={() => {
+            this.setState({ open: false });
+          }}
+        />
+      );
     } else {
       return (
         <div className="card-scrolled">

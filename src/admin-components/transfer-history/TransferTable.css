@@ -1,0 +1,43 @@
+.transfer-admin {
+  padding: 1rem;
+  background-color: #fff;
+  margin: 1rem 0rem 1rem 0rem;
+  border-radius: 10px;
+  min-width: 1000px;
+}
+
+.transfer-admin-scrolled {
+  overflow-x: auto;
+}
+
+.transfer-admin > h2 {
+  font-family: "Arapey", serif;
+  margin-bottom: 5px;
+}
+
+.td-input {
+  border: none;
+  outline: none;
+}
+
+.td-input-am {
+  width: 95%;
+  background: #f1f5f9;
+  height: 30px;
+  padding: 5px 5px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+
+.profile-modal-btn button {
+  padding: 6px;
+  margin: 5px;
+  margin-left: 15px;
+  background-color: #dd2f6e;
+  width: 80px;
+  border-radius: 5px;
+  border: 1px solid #dd2f6e;
+  color: white;
+  cursor: pointer;
+}

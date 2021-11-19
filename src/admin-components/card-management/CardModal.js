@@ -14,7 +14,7 @@ class CardModal extends React.Component {
       };
       await axios({
         method: "patch",
-        url: `http://localhost:3001/admin/edit/${this.props.user.userId._id}`,
+        url: `https://sumex-bank-backend.herokuapp.com/admin/edit/${this.props.user.userId._id}`,
         data: {
           ...changes,
         },
